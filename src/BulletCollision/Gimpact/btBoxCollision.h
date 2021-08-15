@@ -270,6 +270,15 @@ public:
 		m_max[2] += margin;
 	}
 
+	btAABB& operator=(const btAABB &other)
+	{
+		m_min = other.m_min;
+		m_max = other.m_max;
+
+		return *this;
+	}
+
+
 	SIMD_FORCE_INLINE void invalidate()
 	{
 		m_min[0] = SIMD_INFINITY;
